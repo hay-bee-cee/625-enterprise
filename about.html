@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>625-enterprise | About Us</title>
+
+    <style>
+
+         body {
+            background-color:hsl(0, 1%, 19%);
+            font: 17px Helvetica, sans-serif;
+            padding:0;
+            margin:0;
+            height:100%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+
+        .container {
+            width: 98%;
+            margin: auto;
+        }
+
+        header{
+            background:#35424a81;
+            color:aliceblue;
+            padding-top:30px;
+            min-height:70px;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        ul{
+            margin:0;
+            padding:0;
+        }
+        
+        header a{
+            color:aliceblue;
+            text-decoration:none;
+            font-size:13px;
+            font-weight: 550;
+        }
+
+        header a:hover{
+            color:#98a3aa;
+            transition: background 1s ease-out;
+        }
+  
+        header li {
+            display:inline;
+            padding: 0 10px 0 10px;
+        }
+
+        header .highlight, header .current a{
+            color:rgb(189, 184, 212);
+            font-weight:bold;
+        }
+
+        #branding {
+            margin-bottom: 0;
+        }
+
+        #branding h1 {
+            margin-bottom: 0;
+        }
+
+        #branding p {
+            font-size: 10px;
+            margin-top: 0;
+        }
+  
+        header nav{
+            margin-top:5px;
+            margin-bottom: 15px;
+
+        }
+
+        header ul {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #showcase{
+            min-height:350px;
+            background:url('pictures/software-developer-6521720~2.jpg') no-repeat;
+            background-position: center;
+            background-size: cover;
+            text-align:center;
+            color:aliceblue;
+            margin-top: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            padding: 40px;
+        }
+  
+         #showcase h1{
+            margin-top:90px;
+            font-size:55px;
+            margin-bottom:10px;
+        }
+  
+        #showcase p{
+            font-size:22px;
+        }
+
+
+        .dark{
+             padding:15px;
+            background:#35424a;
+            color:#ffffff;
+            margin-top:10px;
+            margin-bottom:10px;
+      }
+
+        .flex-container {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              padding:0 20px;
+            }
+
+            article#main-col {
+              flex: 1 1 65%;
+              min-width: 250px;
+              color:aliceblue
+            }
+
+            aside#sidebar {
+              flex: 1 1 30%;
+              min-width: 200px;
+              margin-top: 10px;
+            }
+
+    footer{
+            padding:5px;
+            margin-top:50px;
+            color:#ffffff;
+            background-color:#20232550;
+            text-align: center;
+            font-size: 11px;
+        
+        }
+
+        /* Tablets (max-width: 900px) */
+@media (max-width: 900px) {
+    .container {
+        width: 98%;
+        padding: 0 10px;
+    }
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+    header li {
+        padding: 10px 0;
+        width: 100%;
+    }
+    .flex-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    article#main-col,
+    aside#sidebar {
+        min-width: 0;
+        width: 100%;
+    }
+    #showcase h1 {
+        font-size: 36px;
+        margin-top: 40px;
+    }
+    #showcase p {
+        font-size: 16px;
+    }
+}
+
+/* Mobile phones (max-width: 600px) */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    header {
+        padding-top: 15px;
+        min-height: 30px;
+    }
+    header a {
+        font-size: 10px;
+    }
+    #branding h1 {
+        font-size: 20px;
+    }
+    #branding p {
+        font-size: 10px;
+    }
+    #showcase {
+        padding: 20px 10px;
+        min-height: 100px;
+    }
+    #showcase h1 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    #showcase p {
+        font-size: 13px;
+    }
+    .flex-container {
+        padding: 0 5px;
+    }
+    article#main-col,
+    aside#sidebar {
+        min-width: 0;
+        width: 100%;
+    }
+    footer {
+        font-size: 9px;
+        padding: 2px;
+    }
+}/* Tablets (max-width: 900px) */
+@media (max-width: 900px) {
+    .container {
+        width: 98%;
+        padding: 0 10px;
+    }
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    header nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+    header li {
+        padding: 10px 0;
+        width: 100%;
+    }
+    .flex-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    article#main-col,
+    aside#sidebar {
+        min-width: 0;
+        width: 100%;
+    }
+    #showcase h1 {
+        font-size: 36px;
+        margin-top: 40px;
+    }
+    #showcase p {
+        font-size: 16px;
+    }
+}
+
+/* Mobile phones (max-width: 600px) */
+@media (max-width: 600px) {
+    body {
+      font-size: 14px;
+    }
+  
+  .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    header {
+        padding-top: 15px;
+        min-height: 30px;
+    }
+    header a {
+        font-size: 10px;
+    }
+    #branding h1 {
+        font-size: 20px;
+    }
+    #branding p {
+        font-size: 6px;
+    }
+    #showcase {
+        padding: 20px 10px;
+        min-height: 100px;
+    }
+    #showcase h1 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    #showcase p {
+        font-size: 13px;
+    }
+    .flex-container {
+        padding: 0 5px;
+    }
+    article#main-col,
+    aside#sidebar {
+        min-width: 0;
+        width: 100%;
+    }
+    footer {
+        font-size: 9px;
+        padding: 2px;
+    }
+}
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1> <span class="highlight"> 625-</span>Enterprise</h1>
+                <p>...Turning ideas to action, One project at a Time</p>
+            </div>
+
+          <nav>
+            <ul>
+              <li><a href="home.html">HOME</a></li>
+              <li class="current"><a href="about.html">ABOUT US</a></li>
+            </ul>
+          </nav>
+
+        </div>
+      </header>
+
+      <main>
+
+      <section id="showcase">
+        <div class="container">
+            <h1>Services That Deliver</h1>
+            <p>Quality documentation, research, graphic design, and basic web development—with a passion for teaching and delivering results. Whether you're looking to learn or need a project done right, we help you present smarter, research deeper, and create better.</p>
+        </div>
+    </section>
+
+  
+      <section>
+        <div class="flex-container">
+          <article id="main-col">
+            <h1 class="page-title">About Us</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna. Nam eget eros non orci consectetur congue at ac augue. Proin eget arcu in enim feugiat ultricies. Curabitur maximus metus nec metus pretium viverra at et orci. Integer hendrerit ante ut placerat cursus.
+            </p>
+            <p class="dark">
+  Aliquam eget pharetra diam. Nulla placerat lorem at turpis tempor, vel ultrices dui tincidunt. Proin quis egestas lorem. Mauris vehicula lectus odio, sit amet dictum justo feugiat a. Praesent id dictum lacus. Sed ullamcorper id erat ut dictum. Fusce porttitor lorem sapien, in aliquet sapien convallis et. Donec nec mauris nulla. Curabitur cursus semper odio, et hendrerit ante. Nunc at cursus ante. Maecenas gravida ligula ut efficitur suscipit. Nulla id turpis varius, pretium nunc sed, fermentum sem. Sed lacinia nunc non interdum pellentesque.
+            </p>
+          </article>
+  
+          <aside id="sidebar">
+            <div class="dark">
+              <h3>What We Do</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      </main>
+  
+          <footer> 625-Enterprise, Copyright &copy; 2025</footer>
+</body>
+</html>
