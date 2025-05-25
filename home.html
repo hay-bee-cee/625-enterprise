@@ -8,6 +8,8 @@
     
 
     <style>
+
+        /*=====Base Styles=====*/
         body {
             background-color:hsl(0, 1%, 19%);
             font: 15px Helvetica, sans-serif;
@@ -18,18 +20,25 @@
             flex-direction: column;
         }
     
-
         .container {
-            width: 98%;
+            width: 100%;
             margin: auto;
         }
 
+        /*=====Header Styles=====*/
         header{
-            background:#35424a81;
             color:aliceblue;
-            padding-top:30px;
-            min-height:70px;
-            box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+            padding:30px 100px 0px 130px;
+            min-height:100px;
+            margin-bottom: 0;
+            background-color: #2e383f;
+            position:fixed;
+            top:0;
+            left:0;
+            width: 100vw;
+            box-sizing: border-box;
+            z-index: 1002;
+            box-shadow: 0 0px 10px 0 rgba(0,0,0,0.25);
         }
 
         header .container {
@@ -37,8 +46,23 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap:10px;
         }
 
+        header nav{
+            margin-top:5px;
+            margin-bottom: 15px;
+        }
+
+        header ul {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin-right: 30px;
+            padding: 0;
+        }
+
+        /*=====Navigation Styles=====*/
         ul{
             margin:0;
             padding:0;
@@ -60,67 +84,94 @@
             padding: 0 10px 0 10px;
         }
 
-        header .highlight, header .current a{
+        header .highlight, 
+        header .current a{
             color:rgb(189, 184, 212);
             font-weight:bold;
         }
 
+        /* ====== Branding Styles ====== */        
         #branding {
             margin-bottom: 0;
         }
 
         #branding h1 {
             margin-bottom: 0;
+            font-size: 15.5px;
         }
 
         #branding p {
-            font-size: 10px;
+            font-size: 5px;
             margin-top: 0;
         }
-  
-        header nav{
-            margin-top:5px;
-            margin-bottom: 15px;
 
+        /*=====Hamburger Menu Styles=====*/
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            gap: 7px;
+            margin-left: 8px;
+            margin-right: 0;
+            z-index: 100;
         }
 
-        header ul {
-            display: flex;
-            gap: 10px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #showcase{
-            min-height:350px;
-            background:url('20250521_043243.jpg') no-repeat;
-            background-position: center;
-            background-size: cover;
-            text-align:center;
-            color:aliceblue;
-            margin-top: 5px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            padding: 40px;
-        }
-  
-         #showcase h1{
-            margin-top:90px;
-            font-size:55px;
-            margin-bottom:10px;
+        .hamburger span {
+            display: block;
+            height: 4px;
+            width: 22px;
+            background: aliceblue;
+            border-radius: 2px;
+            transition: 0.3s;
         }
   
-        #showcase p{
-            font-size:22px;
+        /* ====== Main Content====== */        
+        main{
+            padding-top: 100px;
         }
 
+        /* ====== Description Section ====== */        
+        .desc-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 30px auto 0 auto;
+            padding: 24px 18px;
+            border-radius: 10px;
+            color: aliceblue;
+
+        }
+
+        .desc-section .desc-heading {
+            font-size: 5.8em;
+            font-weight: bold;
+            margin: 10px 0 10px 0;
+            align-self: start;
+        }
+
+        .desc-section .desc-text {
+            font-size: 1.2em;
+            font-weight: 500;
+            line-height: 2.5;
+            color: #fff;
+            margin-top:10px;
+            text-align: center;
+        }
+
+        /* ====== Services Intro Section ====== */       
         #services-intro {
             color: #ffffff;
             text-align: center;
             padding: 40px 20px 10px 20px;
             background-color: #3856686e;
             margin-top: 20px;
-            box-shadow: 2px 2px 2px rgba(0,0,0,0.2); 
         }
 
         #services-intro h2 {
@@ -139,17 +190,16 @@
             margin-bottom: 50px;
         }
 
+         /* ====== Service Boxes Section ====== */
          #boxes {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 20px;
             color: aliceblue;
-            background-color: #35424a81;
-            box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+            background-color: #2e383f;
             margin-top: 0px;
-        }
-       
+        }       
         
        #boxes .box {
             flex: 1 1 30%;
@@ -157,15 +207,14 @@
             box-sizing: border-box;
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
-        
+            margin-top: 20px;       
         }
   
         #boxes .box img{
             width: 100%;
             max-width: 350px;
             height: auto;
-            box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.685);
+            box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.685);
         }
 
         #boxes a {
@@ -174,21 +223,18 @@
         }
 
         #boxes a img:hover {
-            box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.87);
+            box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.87);
             transition: 1s ease-in-out; 
         }
 
-
-         
-
+        /* ====== Call to Action Section ====== */         
         #cq {
             padding: 30px 20px;
             text-align: center;
-            background: hsl(215, 24%, 20%);
+            background: #2e383f;
             color: aliceblue;
             margin-top: 50px;
-            border-radius: 5px;
-            box-shadow: 5px 2px 2px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.25)
         }
 
         #cq h1 {
@@ -210,25 +256,22 @@
             text-decoration: none;
         }
 
-
+        /* ====== Button Styles ====== */
         .button_1{
-            background:hsl(236, 17%, 20%);
-            border-radius: 5px;
+            background:hsla(240, 9%, 17%, 0.404);
+            border-radius: 4px;
             padding: 14px 32px;
             color:#ffffff;
-            font-weight: 600;
             font-size: 15px;
             display: inline-block;
         }
 
         .button_1:hover {
             background:hsl(240, 17%, 15%);
-            transition: background 1s ease-out;
-            
+            transition: background 1s ease-out;            
         }
-
        
-        
+        /* ====== Footer Styles ====== */        
         footer{
             padding:5px;
             margin-top:50px;
@@ -239,43 +282,104 @@
         
         }
 
-        /* Tablets (max-width: 900px) */
+        /* ======= Responsive: Tablets (max-width: 900px)====== */
         @media (max-width: 900px) {
-            .container {
-                width: 98%;
-                padding: 0 10px;
+            header {
+                margin-bottom: 0;
+                padding: 0 0 0 4px;
+                min-height:80px;
             }
-            header .container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
+
+            header a{
+                font-size: 18px;
             }
+                    
             header nav ul {
                 flex-direction: column;
-                gap: 0;
+                gap: 7px;
                 width: 100%;
+                padding:0 0;
             }
-            header li {
+            header li {            
+                width: 100%;
+                text-align: right;        
+            }
+
+            header .container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            /*===== Hamburger nav dropdown styles=====*/       
+            .hamburger {
+                display: flex;
+                margin-right: 0;
+                margin-left: 8px;
+                align-items: center;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: none;
+                position: absolute;
+                top: 80px;
+                left:0;
+                right:auto;
+                min-width:100%;
+                width:auto;
+                z-index: 1000;
                 padding: 10px 0;
-                width: 100%;
+                align-items: flex-end;
+                text-align: center;
             }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .container {
+                width: 98%;
+                padding: 10px 10px;
+            }        
+
+
+            .desc-section {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 18px 8px;
+                text-align: left;
+                margin: 0 auto;
+                margin-bottom: 50px;            
+            }
+
+            .desc-section .desc-text {
+                text-align: left;
+                padding:0 10px;
+            }
+
+            .desc-section .desc-heading {
+                font-size: 10vw;  
+                font-weight: 900;
+                line-height: 1.5;
+                letter-spacing: -1px;
+                color: #bdb8d4;
+                text-shadow: 2px 4px 16px #23242a;
+                margin-bottom: 10px;
+            }
+
             #boxes {
                 flex-direction: column;
                 align-items: center;
                 gap: 30px;
+                font-size: 17px;
             }
             #boxes .box {
                 max-width: 95%;
                 width: 100%;
                 margin-top: 0;
             }
-            #showcase h1 {
-                font-size: 36px;
-                margin-top: 40px;
-            }
-            #showcase p {
-                font-size: 16px;
-            }
+            
             #services-intro h2 {
                 font-size: 28px;
             }
@@ -284,79 +388,112 @@
             }
         }
 
-        /* Mobile phones (max-width: 600px) */
+        /* ====== Responsive: Mobile phones (max-width: 600px) ====== */
         @media (max-width: 600px) {
-            .container {
-                width: 100%;
-                padding: 0 5px;
-            }
             header {
-                padding-top: 15px;
+                padding: 2px 0 2px 8px;
                 min-height: 30px;
             }
             header a {
+                font-size: 15px;
+            }
+            
+            nav ul{
+                top:50px;
+            }
+
+            .hamburger {
+                margin-right: 6px;
+                margin-left: 0;
+                align-items: center;
+            }
+
+            #branding h1 {
                 font-size: 10px;
             }
-            #branding h1 {
-                font-size: 20px;
-            }
+    
             #branding p {
-                font-size: 6px;
+                font-size: 3.3px;
             }
-            #showcase {
-                padding: 20px 10px;
-                min-height: 100px;
+            
+            .container {
+                width: 100%;
+                padding: 8px 0px;
+            }  
+            
+            .desc-section {
+                padding: 0px 8px;
+                gap: 10px;
+
             }
-            #showcase h1 {
-                font-size: 20px;
-                margin-top: 20px;
+            
+            .desc-section .desc-heading {
+                font-size: 15vw;
+                font-weight: 900;
+                line-height: 1.5;
+                letter-spacing: -1px;
+                color: #bdb8d4;
+                text-shadow: 2px 4px 16px #23242a;
+                margin-bottom: 20px;
             }
-            #showcase p {
-                font-size: 13px;
+            
+            .desc-section .desc-text {
+                font-size: 16px;
+                padding: 0 8px;
+                text-align: left;
             }
+
             #services-intro {
                 padding: 15px 5px 5px 5px;
             }
+            
             #services-intro h2 {
                 font-size: 18px;
             }
+            
             #services-intro p,
             #cq p {
-                font-size: 13px;
-                max-width: 100%;
+                font-size: 15px;
             }
+            
             #boxes .box {
                 padding: 8px;
             }
+            
             #boxes .box img {
                 max-width: 100%;
             }
+            
             .button_1 {
                 padding: 8px 12px;
                 font-size: 12px;
             }
+            
             #cq h1 {
-                font-size: 14px;
+                font-size: 18px;
             }
+                    
             footer {
                 font-size: 9px;
                 padding: 2px;
             }
         }
-
-
         
+            
     </style>
 </head>
+
 <body>
     <header>
 
-        <div class="container">
-            <div id="branding">
-                <h1> <span class="highlight"> 625-</span>Enterprise</h1>
-                <p>...Turning ideas to action, One project at a Time</p>
+        <!-- ====== Header Section ====== -->
+        <div class="container"> 
+            <div class="branding-row">
+                <div id="branding">
+                    <h1> <span class="highlight"> 625-</span>Enterprise</h1>
+                    <p>...Turning ideas to action, One project at a Time</p>
+                </div>
             </div>
-
             <nav>
                 <ul>
                     <li class="current">
@@ -364,73 +501,92 @@
                     </li>
 
                     <li>
-                        <a href="about.html">ABOUT US</a>
+                        <a href="about.html">ABOUT</a>
                     </li>
 
                 </ul>
             </nav>
+            <button class="hamburger" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+            </button>
         </div>
+        
     </header>
 
+
+    
+
     <main>
-        <section id="showcase">
-            <div class="container">
-                <h1>Smart Work. Clean Results.</h1>
-                <p>Every idea has a story — we design it, build it, and shape it into something real.</p>
-            </div>
+
+        <!-- ====== Description Section ====== -->
+        <section class="desc-section">
+        <h2 class="desc-heading">Design. Develop. Deliver. Repeat.</h2>
+        
+        <p class="desc-text">one project at a time. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum similique adipisci, voluptatibus cum eius nihil, quis distinctio suscipit cumque atque officiis sapiente numquam sit nesciunt optio cupiditate! Temporibus, harum ipsam.lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sim
+        </p>
         </section>
 
-
-
-
-        
-        <section id="boxes">
+        <!-- ====== Service Boxes Section ====== -->
+        <section id="boxes">       
             <div class="box">
                 <a href="graphics.html">
-                <img src="3343973.jpg" alt=
-                "Graphic Design">
-                
+                    <img src="3343973.jpg" alt="Graphic Design">
+                </a>
                 <h3>Graphic Designs</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt unde sed veritatis, officia impedit facilis. Exercitationem nostrum, ea totam, iure repellat autem iste, repudiandae asperiores accusantium quidem impedit minima obcaecati.</p>
-                </a>
             </div>
 
             <div class="box">
                 <a href="web.html">
-                <img src="4380747.jpg" alt="Web Development">
+                    <img src="4380747.jpg" alt="Web Development">
+                </a>
                 <h3>Web Development</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt unde sed veritatis, officia impedit facilis. Exercitationem nostrum, ea totam, iure repellat autem iste, repudiandae asperiores accusantium quidem impedit minima obcaecati.</p>
-                </a>
             </div>
 
             <div class="box">
                 <a href="documentation.html">
-                <img src="8845713.jpg" alt="Documentation">
+                    <img src="8845713.jpg" alt="Documentation">
+                </a>
                 <h3>Documentation</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt unde sed veritatis, officia impedit facilis. Exercitationem nostrum, ea totam, iure repellat autem iste, repudiandae asperiores accusantium quidem impedit minima obcaecati.</p>
-                </a>
             </div>
         </section>
 
+        <!-- ====== Call to Action Section ====== -->
             <section id="cq">
-            <div class="container">
-              <h1>Need a custom project done?</h1>
-              <p>Let’s work together to build, design, or document something amazing. Click below to get started!</p>
-              <a href="contact.html" class="button_1" target="_blank">Request a Quote</a>
-            </div>
-          </section>
-
-
-        
+                <div class="container">
+                    <h1>Need A Custom Project Done?</h1>
+                    <p>Let’s work together to build, design, or document something amazing. Click below!</p>
+                    <a href="contact.html" class="button_1" target="_blank">Get Started</a>
+                </div>
+            </section>
+                  
     </main>
 
-    <footer> 625-Enterprise, Copyright &copy; 2025</footer>
-    
-    <script>
-  document.querySelector('.button_1').addEventListener('click', function(e) {
-    alert('Thank you for your interest! You will be redirected to our contact page.');
+     <!-- ====== Footer ====== -->
 
-  });
-</script>
+    <footer> 625-Enterprise, Copyright &copy; 2025</footer>
+
+    <script>
+        /*====== Hamburger Navigation Script ======*/
+        const hamburger = document.querySelector('.hamburger');
+        const navList = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent this click from bubbling to the document
+            navList.classList.toggle('show');
+        });
+
+        /*Click Page To Remove Navigation*/
+        navList.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent clicks inside nav from closing it
+        });
+
+        document.addEventListener('click', function() {
+            navList.classList.remove('show'); // allows closing of nav by clicking any part of the page
+        });
+    </script>
 </body>
 </html>
