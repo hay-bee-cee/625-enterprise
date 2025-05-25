@@ -6,10 +6,11 @@
     <title>625-enterprise | About Us</title>
 
     <style>
-
-         body {
+    
+        /*=====Base Styles=====*/    
+        body {
             background-color:hsl(0, 1%, 19%);
-            font: 17px Helvetica, sans-serif;
+            font: 18px Helvetica, sans-serif;
             padding:0;
             margin:0;
             height:100%;
@@ -17,18 +18,25 @@
             flex-direction: column;
         }
     
-
         .container {
-            width: 98%;
+            width: 100%;
             margin: auto;
         }
 
+        /*=====Header Styles=====*/
         header{
-            background:#35424a81;
             color:aliceblue;
-            padding-top:30px;
-            min-height:70px;
-            box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+            padding:30px 100px 0px 130px;
+            min-height:100px;
+            margin-bottom: 0;
+            background-color: #2e383f;
+            position:fixed;
+            top:0;
+            left:0;
+            width: 100vw;
+            box-sizing: border-box;
+            z-index: 1002;
+            box-shadow: 0 0px 10px 0 rgba(0,0,0,0.25);
         }
 
         header .container {
@@ -36,8 +44,25 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap:10px;
         }
 
+        header nav{
+            margin-top:5px;
+            margin-bottom: 15px;
+          
+
+        }
+
+        header ul {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            margin-right: 30px;
+            padding: 0;
+        }
+
+        /*=====Navigation Styles=====*/
         ul{
             margin:0;
             padding:0;
@@ -52,7 +77,6 @@
 
         header a:hover{
             color:#98a3aa;
-            transition: background 1s ease-out;
         }
   
         header li {
@@ -60,319 +84,294 @@
             padding: 0 10px 0 10px;
         }
 
-        header .highlight, header .current a{
+        header .highlight, 
+        header .current a{
             color:rgb(189, 184, 212);
             font-weight:bold;
         }
 
+        /* ====== Branding Styles ====== */            
         #branding {
             margin-bottom: 0;
         }
 
         #branding h1 {
             margin-bottom: 0;
+            font-size: 15.5px;
         }
 
         #branding p {
-            font-size: 10px;
+            font-size: 5px;
             margin-top: 0;
         }
-  
-        header nav{
-            margin-top:5px;
-            margin-bottom: 15px;
 
-        }
-
-        header ul {
-            display: flex;
-            gap: 10px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #showcase{
-            min-height:350px;
-            background:url('software-developer-6521720~2.jpg') no-repeat;
-            background-position: center;
-            background-size: cover;
-            text-align:center;
-            color:aliceblue;
-            margin-top: 5px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            padding: 40px;
-        }
-  
-         #showcase h1{
-            margin-top:90px;
-            font-size:55px;
-            margin-bottom:10px;
-        }
-  
-        #showcase p{
-            font-size:22px;
+        /*=====Hamburger Menu Styles=====*/
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            gap: 7px;
+            margin-left: 8px;
+            margin-right: 0;
+            z-index: 100;
         }
 
+        .hamburger span {
+            display: block;
+            height: 4px;
+            width: 22px;
+            background: aliceblue;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+       /* ====== Main Content ====== */        
+         main{
+            padding-top: 100px;
+        }
 
         .dark{
-             padding:15px;
+            padding:15px;
             background:#35424a;
             color:#ffffff;
-            margin-top:10px;
-            margin-bottom:10px;
-      }
+            margin-top:40px;
+            margin-bottom:20px;
+        }
 
         .flex-container {
-              display: flex;
-              flex-wrap: wrap;
-              gap: 20px;
-              padding:0 20px;
-            }
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding:0 20px;
+        }
 
-            article#main-col {
-              flex: 1 1 65%;
-              min-width: 250px;
-              color:aliceblue
-            }
+        article#main-col {
+            flex: 1 1 65%;
+            min-width: 250px;
+            color:aliceblue
+        }
 
-            aside#sidebar {
-              flex: 1 1 30%;
-              min-width: 200px;
-              margin-top: 10px;
-            }
+        aside#sidebar {
+            flex: 1 1 30%;
+            min-width: 200px;
+            margin-top: 10px;
+        }
 
-    footer{
+        /*=====Footer Styles=====*/
+        footer{
             padding:5px;
             margin-top:50px;
             color:#ffffff;
             background-color:#20232550;
             text-align: center;
             font-size: 11px;
-        
+    
         }
 
         /* Tablets (max-width: 900px) */
-@media (max-width: 900px) {
-    .container {
-        width: 98%;
-        padding: 0 10px;
-    }
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    header nav ul {
-        flex-direction: column;
-        gap: 0;
-        width: 100%;
-    }
-    header li {
-        padding: 10px 0;
-        width: 100%;
-    }
-    .flex-container {
-        flex-direction: column;
-        padding: 0 10px;
-    }
-    article#main-col,
-    aside#sidebar {
-        min-width: 0;
-        width: 100%;
-    }
-    #showcase h1 {
-        font-size: 36px;
-        margin-top: 40px;
-    }
-    #showcase p {
-        font-size: 16px;
-    }
-}
+        @media (max-width: 900px) {
+            
+            body {
+                font-size: 15px;
+            }
+            
+            header {
+                margin-bottom: 0;
+                padding: 0 0 0 4px;
+                min-height: 80px
+            }
 
-/* Mobile phones (max-width: 600px) */
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 0 5px;
-    }
-    header {
-        padding-top: 15px;
-        min-height: 30px;
-    }
-    header a {
-        font-size: 10px;
-    }
-    #branding h1 {
-        font-size: 20px;
-    }
-    #branding p {
-        font-size: 10px;
-    }
-    #showcase {
-        padding: 20px 10px;
-        min-height: 100px;
-    }
-    #showcase h1 {
-        font-size: 20px;
-        margin-top: 20px;
-    }
-    #showcase p {
-        font-size: 13px;
-    }
-    .flex-container {
-        padding: 0 5px;
-    }
-    article#main-col,
-    aside#sidebar {
-        min-width: 0;
-        width: 100%;
-    }
-    footer {
-        font-size: 9px;
-        padding: 2px;
-    }
-}/* Tablets (max-width: 900px) */
-@media (max-width: 900px) {
-    .container {
-        width: 98%;
-        padding: 0 10px;
-    }
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    header nav ul {
-        flex-direction: column;
-        gap: 0;
-        width: 100%;
-    }
-    header li {
-        padding: 10px 0;
-        width: 100%;
-    }
-    .flex-container {
-        flex-direction: column;
-        padding: 0 10px;
-    }
-    article#main-col,
-    aside#sidebar {
-        min-width: 0;
-        width: 100%;
-    }
-    #showcase h1 {
-        font-size: 36px;
-        margin-top: 40px;
-    }
-    #showcase p {
-        font-size: 16px;
-    }
-}
+            header a{
+                font-size: 18px;
+            }
 
-/* Mobile phones (max-width: 600px) */
-@media (max-width: 600px) {
-    body {
-      font-size: 14px;
-    }
-  
-  .container {
-        width: 100%;
-        padding: 0 5px;
-    }
-    header {
-        padding-top: 15px;
-        min-height: 30px;
-    }
-    header a {
-        font-size: 10px;
-    }
-    #branding h1 {
-        font-size: 20px;
-    }
-    #branding p {
-        font-size: 6px;
-    }
-    #showcase {
-        padding: 20px 10px;
-        min-height: 100px;
-    }
-    #showcase h1 {
-        font-size: 20px;
-        margin-top: 20px;
-    }
-    #showcase p {
-        font-size: 13px;
-    }
-    .flex-container {
-        padding: 0 5px;
-    }
-    article#main-col,
-    aside#sidebar {
-        min-width: 0;
-        width: 100%;
-    }
-    footer {
-        font-size: 9px;
-        padding: 2px;
-    }
-}
+            header nav ul {
+                flex-direction: column;
+                gap: 7px;
+                width: 100%;
+                padding:0 0;
+            }
+
+            header li {        
+                width: 100%;
+                text-align: right;       
+            }
+
+            header .container {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            /*===== Hamburger nav dropdown styles=====*/       
+            .hamburger {
+                display: flex;
+                margin-right: 0;
+                margin-left: 8px;
+                align-items: center;
+            }
+                       
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: none;
+                position: absolute;
+                top: 80px;
+                left:0;
+                right:auto;
+                min-width:100%;
+                width:auto;
+                z-index: 1000;
+                padding: 10px 0;
+                align-items: flex-end;
+                text-align: center;
+            }
+            nav ul.show {
+                display: flex;
+            }
+
+            .container {
+                width: 98%;
+                padding: 10px 10px;            
+            }
+            
+            article#main-col, aside#sidebar {
+                min-width: 1;
+                width: 100%;
+            }
+
+            footer {
+                font-size: 9px;
+                padding: 2px;
+            }
+        }
+
+        /* Mobile phones (max-width: 600px) */
+        @media (max-width: 600px) {   
+            body {
+                font-size: 15px;
+            }
+
+            header {
+                padding: 2px 0 2px 8px;
+                min-height: 30px;
+            }
+            header a {
+                font-size: 15px;
+            }
+
+             nav ul{
+                top:50px;
+            }
+   
+            .container {
+                width: 100%;
+                padding: 8px 0px;
+            }            
+
+            .hamburger {
+                margin-right: 6px;
+                margin-left: 0;
+                align-items: center;
+            }
+
+            #branding h1 {
+                font-size: 10px;
+            }
+            #branding p {
+                font-size: 3.3px;
+            }
+        }
+
     </style>
-
 </head>
 
 <body>
 
     <header>
+
+        <!-- ====== Header Section ====== -->
         <div class="container">
-            <div id="branding">
-                <h1> <span class="highlight"> 625-</span>Enterprise</h1>
-                <p>...Turning ideas to action, One project at a Time</p>
+            <div class="branding-row">
+                <div id="branding">
+                    <h1> <span class="highlight"> 625-</span>Enterprise</h1>
+                    <p>...Turning ideas to action, One project at a Time</p>
+                </div>
             </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="home.html">HOME</a>
+                    </li>
 
-          <nav>
-            <ul>
-              <li><a href="home.html">HOME</a></li>
-              <li class="current"><a href="about.html">ABOUT US</a></li>
-            </ul>
-          </nav>
+                    <li class="current">
+                        <a href="about.html">ABOUT</a>
+                    </li>
 
+                </ul>
+            </nav>
+             <button class="hamburger" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+            </button>
         </div>
-      </header>
-
-      <main>
-
-      <section id="showcase">
-        <div class="container">
-            <h1>Services That Deliver</h1>
-            <p>Quality documentation, research, graphic design, and basic web development—with a passion for teaching and delivering results. Whether you're looking to learn or need a project done right, we help you present smarter, research deeper, and create better.</p>
         </div>
-    </section>
+        
+    </header>
+    
+    <main>
 
-  
-      <section>
-        <div class="flex-container">
-          <article id="main-col">
-            <h1 class="page-title">About Us</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna. Nam eget eros non orci consectetur congue at ac augue. Proin eget arcu in enim feugiat ultricies. Curabitur maximus metus nec metus pretium viverra at et orci. Integer hendrerit ante ut placerat cursus.
-            </p>
-            <p class="dark">
-  Aliquam eget pharetra diam. Nulla placerat lorem at turpis tempor, vel ultrices dui tincidunt. Proin quis egestas lorem. Mauris vehicula lectus odio, sit amet dictum justo feugiat a. Praesent id dictum lacus. Sed ullamcorper id erat ut dictum. Fusce porttitor lorem sapien, in aliquet sapien convallis et. Donec nec mauris nulla. Curabitur cursus semper odio, et hendrerit ante. Nunc at cursus ante. Maecenas gravida ligula ut efficitur suscipit. Nulla id turpis varius, pretium nunc sed, fermentum sem. Sed lacinia nunc non interdum pellentesque.
-            </p>
-          </article>
-  
-          <aside id="sidebar">
-            <div class="dark">
-              <h3>What We Do</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+        <!--Main Content-->
+        <section>
+            <div class="flex-container">
+                <article id="main-col">
+                    <h1 class="page-title">About Us</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna. Nam eget eros non orci consectetur congue at ac augue. Proin eget arcu in enim feugiat ultricies. Curabitur maximus metus nec metus pretium viverra at et orci. Integer hendrerit ante ut placerat cursus.
+                    </p>
+                    <p>
+                        Aliquam eget pharetra diam. Nulla placerat lorem at turpis tempor, vel ultrices dui tincidunt. Proin quis egestas lorem. Mauris vehicula lectus odio, sit amet dictum justo feugiat a. Praesent id dictum lacus. Sed ullamcorper id erat ut dictum. Fusce porttitor lorem sapien, in aliquet sapien convallis et. Donec nec mauris nulla. Curabitur cursus semper odio, et hendrerit ante. Nunc at cursus ante. Maecenas gravida ligula ut efficitur suscipit. Nulla id turpis varius, pretium nunc sed, fermentum sem. Sed lacinia nunc non interdum pellentesque.
+                    </p>
+                </article>
+    
+                <aside id="sidebar">
+                    <div class="dark">
+                        <h3>What We Do</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius auctor lacus nec feugiat. Phasellus sit amet ex ipsum. Praesent pharetra tincidunt tempor. Etiam velit eros, dapibus eget porta in, lacinia et magna</p>
+                    </div>
+                </aside>
             </div>
-          </aside>
-        </div>
-      </section>
+        </section>
 
-      </main>
+    </main>
   
-          <footer> 625-Enterprise, Copyright &copy; 2025</footer>
+    <footer> 625-Enterprise, Copyright &copy; 2025</footer>
+
+    <script>
+
+        /*====== Hamburger Navigation Script ======*/
+        const hamburger = document.querySelector('.hamburger');
+        const navList = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent this click from bubbling to the document
+            navList.classList.toggle('show');
+        });
+
+        /*Click Page To Remove Navigation*/
+        navList.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent clicks inside nav from closing it
+        });
+
+        document.addEventListener('click', function() {
+            navList.classList.remove('show'); // allows closing of nav by clicking any part of the page
+        });
+
+    </script>
 </body>
 </html>
