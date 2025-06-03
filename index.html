@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="WhatsApp Image 2025-05-22 at 11.00.23 PM.jpeg">
+    <link rel="icon" type="image/png" href="pictures/favicon.png">
     <title>625-enterprise | Welcome</title>
     <style>
 
@@ -20,7 +20,7 @@
       .hero {
         position: relative;
         display: flex;
-        background-image: url('pen-4337524.jpg'); 
+        background-image: url('pictures/pen-4337524.jpg'); 
         background-size: cover ;
         background-position: center;
         justify-content: center;  
@@ -36,10 +36,23 @@
         opacity: 0;
         transition: opacity 3s;
       }
+      .hero-content img {
+        width: 250px;
+        margin-bottom: 5px;
+      }
 
-      .hero h1 {
-        font-size: 28px;
-        margin:0;
+      input { 
+        padding:8px; 
+        border-radius:4px; 
+        border:none; 
+        margin-bottom:10px; 
+        width: 80%; 
+        max-width: 250px;
+      }
+
+      input:focus{
+        outline: none;
+        box-shadow: none;
       }
 
       .hero-btn{
@@ -47,11 +60,14 @@
         padding: 10px 20px;
         background-color: rgb(2, 2, 34);
         color: white;
-        text-decoration: none;
         border-radius: 5px;
         transition: background-color 0.3s;
         font: 13px sans-serif;
         font-weight: 600;
+        width: 80%; 
+        max-width: 250px;
+        border:none;
+        cursor:pointer
       }
 
       .hero-btn:hover {
@@ -60,12 +76,13 @@
 
       /*=====Tablets (max-width: 900px)===== */
       @media (max-width: 900px) {
-        .hero h1 {
-          font-size: 24px;
-        }
         .hero-content p {
           font-size: 14px;
         }
+        .hero-content img {
+        width: 200px;
+        }
+
         .hero-btn {
           padding: 9px 16px;
           font-size: 12px;
@@ -74,9 +91,7 @@
 
       /* ======Mobile phones (max-width: 600px)====== */
       @media (max-width: 600px) {
-        .hero h1 {
-          font-size: 20px;
-        }
+
         .hero-content p {
           font-size: 12px;
         }
@@ -94,23 +109,67 @@
     <!--=====Hero Content====-->
     <section class="hero">
       <div class="hero-content">
-        <h1 class="welcome">
-          Welcome to 625-Enterprise
-        </h1>
+        <img src="pictures/WhatsApp_Image_2025-05-29_at_10.00.11_AM-removebg-preview(1).png" >
+         
+        <!-- Login Form Start -->
+        <form class="login-form" style="margin-bottom: 20px;">
+          <input 
+            type="text" 
+            placeholder="Username" 
+            required
+            >
 
-        <p style="font-size: 15px; margin-bottom: 40px;">...Turning ideas to action, One project at a Time</p>
+          <br>
 
-        <a href="home.html" class="hero-btn">Visit Us</a>
+          <input 
+            type="password" 
+            placeholder="Password" 
+            required
+          >
+
+          <br>
+          
+          <button 
+            type="submit" 
+            class="hero-btn"
+          >Log In</button>
+        </form>
+        <p style="margin-bottom: 30px; font-size: 14px;">
+          Don't have an account?
+          <a href="signup.html" target="_blank" style = "color:#2a2a4a; font-weight: bold; text-decoration: none;">Sign Up</a>
+        </p>
+
+
 
       </div>
 
     </section>
 
     <script>
-      /*Fade In of Hero-content*/
-        window.onload = function() {
-          document.querySelector('.hero-content').style.opacity = 1;
-        };
+      // Fade In of Hero-content
+      window.onload = function() {
+        document.querySelector('.hero-content').style.opacity = 1;
+      };
+
+      // Handle login form submission
+      document.querySelector('.login-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const username = this.querySelector('input[type="text"]').value;
+        const password = this.querySelector('input[type="password"]').value;
+
+        const response = await fetch('http://localhost:3000/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          window.location.href = "home.html"; // Redirect to home page on success
+        } else {
+          alert(result.message || 'Login failed');
+        }
+      });
     </script>
   </body>
 </html>
